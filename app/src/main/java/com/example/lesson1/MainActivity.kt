@@ -47,9 +47,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun minus() {
         binding.minus.setOnClickListener {
-            binding.zero.text = count--.toString()
+            if (count <= 0) {
+                binding.minus.isEnabled
+            } else {
+                count--
+                binding.zero .text= count.toString()
+            }
         }
-    }
+        }
+
     companion object{
         const val NUMBER = "count"
     }
